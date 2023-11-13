@@ -1,4 +1,4 @@
-# Készítők: Somogyi András, Somogyvári Márton, Nguyen Duc Duy
+
 
 ## Feladat beosztások:
 |Név|Feladat|
@@ -8,3 +8,4 @@
 | Somogyvári Márton| Readme fájl megcsinálása|
 
 ## Projekt neve: Kocsi Mosoda
+### Leírás: Bemegy a kocsi a mosodába és a kiválasztott funkcióknak megfelelelően mossa le az autót.
