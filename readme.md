@@ -10,9 +10,9 @@
 ## Projekt neve: Kocsi Mosoda
 ### Leírás: Bemegy a kocsi a mosodába és a kiválasztott funkcióknak megfelelelően mossa le az autót.
   1. A kocsi mosoda autokat mos le, ha bemegy a kocsi a mosodába akkor lemossák.
-    * A kocsikat rendszám és Márka alapján lehet megkülönböztetni.
-    * A mosoda alapértelmezetten 5 ruha befogadására alkalmas
-    * Jelezzük, ha megtelt a mosoda, de máshogy nem kell foglalkozni ezzel az esettel.
+     * A kocsikat rendszám és Márka alapján lehet megkülönböztetni.
+     * A mosoda alapértelmezetten 5 ruha befogadására alkalmas
+     * Jelezzük, ha megtelt a mosoda, de máshogy nem kell foglalkozni ezzel az esettel.
   1. A kocsi mosoda fejlődött, most már motorokat is be tud venni.
      * A motorok két kerekű járművek, ezért kisebb nyomással lehet őket csak letakarítani!
   1. A kocsi mosoda tönkre is tud menni, ekkor minden beadott auto nem lesz tiszta.
