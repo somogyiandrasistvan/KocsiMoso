@@ -1,5 +1,5 @@
 package modell;
 
-public class KocsiMoso {
-    
+public class Kocsimoso {
+
 }
