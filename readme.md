@@ -18,4 +18,4 @@
      * A kocsi mosoda a továbbiakban nem üzemel, nem tud járműveket bevenni.  
   1. A kocsi mosoda specializálódott, már nem fogad általános kocsikat, hanem specializálódott motorokra és kamionokra.
      * A motorok megsérülhetnek, ha nem kímélő mosással mossák őket.
-     * A Kamionok mérete számít a mosásnál. A kamionok magassága 1,8m - 2,4m-ig terjed és általában 2,1 - 2,2m szélesek.
+     * A Kamionok mérete számít a mosásnál. A kamionok magassága 1,8m - 2,4m-ig terjed és általában 2,1 - 2,2m szélesek. Ha ennél nagyobb akkor nem lehet a mosodába bevinni! 
