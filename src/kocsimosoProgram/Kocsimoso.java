@@ -1,20 +1,46 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package kocsimosoProgram;
 
-/**
- *
- * @author nguyen.d.duy
- */
+import modell.Auto;
+import modell.Mosoda;
+
 public class Kocsimoso {
 
-    /**
-     * @param args the command line arguments
-     */
+    private Mosoda mosoda;
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        new Kocsimoso();
+
+    }
+
+    public Kocsimoso() {
+        mosoda = new Mosoda(2);
+        mosoda.bevesz(new Auto("aaa-123", "Ford"));
+        mosoda.bevesz(new Auto("aaa-124", "Mustang"));
+        
+        System.out.println("--- mosoda autói mosás ELŐTT:");
+        mosodaRuhai();
+        
+        System.out.println("--- mosoda autói 1. mosás UTÁN:");
+        mosoda.mos();
+        mosodaRuhai();
+        
+        System.out.println("--- mosoda autói 2. mosás UTÁN:");
+        mosoda.mos();
+        mosodaRuhai();
+        
+        mosoda.kiad("aaa-123");
+        mosoda.kiad("aaa-124");
+        System.out.println("--- a mosodában maradt ruhák:");
+        mosodaRuhai();
+
     }
     
+    private void mosodaRuhai() {
+        for (String auto : mosoda.getAutok()) {
+                if (auto != null) {
+                    System.out.println(auto);
+            }
+        }
+    }
+
 }

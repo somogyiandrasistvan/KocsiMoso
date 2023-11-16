@@ -6,10 +6,10 @@ public class Auto {
     private String rendszam, marka;
     private boolean tiszta;
 
-    public Auto(String rendszam, String marka, boolean tiszta) {
+    public Auto(String rendszam, String marka) {
         this.rendszam = rendszam;
         this.marka = marka;
-        this.tiszta = tiszta;
+        this.tiszta = false;
     }
 
     public boolean isTiszta() {

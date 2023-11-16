@@ -24,14 +24,40 @@ public class Mosoda {
 
     public void mos() {
         for (Auto auto : autok) {
-            if (auto.isTiszta()) {
-                System.out.println(auto.getRendszam() + " rendszámú autó tiszta");
-            }
-            else{
-                System.out.println(auto.getRendszam() + " rendszámú autó nem tiszta");
-                
+            if(auto != null){
+                if(auto instanceof Kocsi){
+                    Kocsi kocsi = (Kocsi) auto;
+                    kocsi.setTisztasag(kocsi.getTisztasag() * 0.97);
+                }
+                auto.setTiszta(true);
             }
         }
+    }
+    
+    public void kiad(String rendszam){
+        int i = 0;
+        while(i < autoDb && autok[i] != null && !(autok[i].getRendszam().equals(rendszam))){
+            i++;
+        }
+        if(i < autoDb){
+            String tipus = autok[i] instanceof Auto ? "autója" : "motorja";
+            System.out.println("Kiadva %s %s!".formatted(rendszam, tipus));
+            autok[i] = null;
+        }else{
+            System.out.println("Nincs ilyen ruha a mosodában!");
+        }
+    }
+    
+    public String[] getAutok() {
+        String[] ruhak = new String[this.autok.length];
+        for (int i = 0; i < autoDb; i++) {
+            Auto auto = this.autok[i];
+            if(auto != null){
+                ruhak[i] = auto.toString();
+
+            }
+        }
+        return ruhak;
     }
 
 }
