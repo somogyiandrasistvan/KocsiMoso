@@ -2,7 +2,7 @@
 package modell;
 
 
-public class Auto {
+public abstract class Auto {
     private String rendszam, marka;
     private boolean tiszta;
 
@@ -43,5 +43,6 @@ public class Auto {
     }
     
     
-    
+    public abstract void altalanosMosasHatasa();
+    public abstract void kimeloMosasMosasHatasa();
 }

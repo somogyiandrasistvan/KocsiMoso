@@ -21,9 +21,18 @@ public class Motor extends Auto {
     @Override
     public String toString() {
         String os = super.toString();
-        return os + "Kocsi{" + "tisztasag=" + erzekenysege + '}';
+        return os + ", típus: Motor," + " tisztasag:" + erzekenysege;
     }
     
-    
+    @Override
+    public void altalanosMosasHatasa() {
+        erzekenysege *= .97;
+    }
+
+    @Override
+    public void kimeloMosasMosasHatasa() {
+        erzekenysege *= .985;
+    }
+
     
 }
