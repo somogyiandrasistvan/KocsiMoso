@@ -39,7 +39,7 @@ public class Auto {
 
     @Override
     public String toString() {
-        return "Auto{" + "rendszam=" + rendszam + ", marka=" + marka + ", tiszta=" + tiszta + '}';
+        return "Jármű: " + "rendszam=" + rendszam + ", marka=" + marka;
     }
     
     
