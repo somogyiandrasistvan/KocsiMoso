@@ -2,41 +2,40 @@ package modell;
 
 public class Motor extends Jarmu {
 
-    private double szinIntenzitas;
+    private double allapot;
 
     public Motor(String tulNev) {
         super(tulNev);
-        szinIntenzitas = 100;
+        allapot = 100;
     }
 
-    public double getSzin() {
-        return szinIntenzitas;
+    public double getAllapot() {
+        return allapot;
     }
 
-    public void setSzin(double szinIntenzitas) {
-        this.szinIntenzitas = szinIntenzitas;
+    public void setAllapot(double szinIntenzitas) {
+        this.allapot = szinIntenzitas;
     }
 
     @Override
     public String toString() {
         String os = super.toString();
         return os + System.lineSeparator() + "\t"
-                + "Motor{" + "szinIntenzitas=" + szinIntenzitas + '}';
+                + "Motor{" + "állapot=" + allapot + '}';
     }
 
     @Override
     public void nagyMosas() {
-        szinIntenzitas *= .97;
+        allapot *= .98;
     }
 
     @Override
     public void kozepesMosas() {
-        szinIntenzitas *= .97;
+        allapot *= .99;
     }
 
     @Override
     public void kisMosas() {
-        szinIntenzitas *= .985;
     }
 
 }

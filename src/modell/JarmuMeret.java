@@ -1,7 +1,7 @@
 package modell;
 
 public enum JarmuMeret {
-    NAGY,
+    TUL_NAGY,
     KOZEPES,
     KICSI,
 }

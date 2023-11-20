@@ -1,6 +1,6 @@
 package modell;
 
-import static modell.JarmuMeret.NAGY;
+import static modell.JarmuMeret.TUL_NAGY;
 import static modell.JarmuMeret.KOZEPES;
 import static modell.JarmuMeret.KICSI;
 
@@ -40,7 +40,10 @@ public class Kocsimoso {
         if (allapot == UzemelesiAllapot.UZEMEL) {
             if (ruhaDb < jarmuvek.length) {
                 jarmuvek[ruhaDb++] = jarmu;
-            } else {
+            }else if (JarmuMeret.TUL_NAGY == TUL_NAGY) {
+                System.out.println("A kamion túl nagy!");
+            }
+            else {
                 System.out.println("A kocsimosó megtelt!");
             }
         } else {
@@ -95,12 +98,12 @@ public class Kocsimoso {
                 i++;
             }
             if (i < ruhaDb) {
-                String tipus = jarmuvek[i] instanceof Jarmu ? "ruhája" : "inge";
+                String tipus = jarmuvek[i] instanceof Jarmu ? "járműje" : "motorja";
                 System.out.println("Kiadva %s %s!".formatted(tulNeve, tipus));
                 j = jarmuvek[i];
                 jarmuvek[i] = null;
             } else {
-                System.out.println("Nincs ilyen jarmu a mosodában!");
+                System.out.println("Nincs ilyen jármű a mosodában!");
             }
 
         } else {

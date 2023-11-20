@@ -1,6 +1,7 @@
 package main;
 
 import modell.Jarmu;
+import modell.JarmuMeret;
 import modell.Kamion;
 import modell.Kocsi;
 import modell.Kocsimoso;
@@ -16,10 +17,10 @@ public class KocsimosoProgram {
 
     public KocsimosoProgram() {
         kocsimoso = new Kocsimoso(4);
-        kocsimoso.bevesz(new Kamion("Optimus"));
-        kocsimoso.bevesz(new Kamion("Megatron"));
-        kocsimoso.bevesz(new Kocsi("Nissan"));
-        kocsimoso.bevesz(new Motor("Nagasaki"));
+        kocsimoso.bevesz(new Kamion("Optimus 6542"));
+        kocsimoso.bevesz(new Kamion("Megatron 3456", JarmuMeret.TUL_NAGY));
+        kocsimoso.bevesz(new Kocsi("Nissan 1234"));
+        kocsimoso.bevesz(new Motor("Nagasaki 9876"));
 
         System.out.println("--- kocsimosó járműi mosás előtt:");
         kocsimosoJarmui();
@@ -48,6 +49,7 @@ public class KocsimosoProgram {
                 System.out.println(jarmu);
             }
         }
+        System.out.println("");
     }
 
 }
