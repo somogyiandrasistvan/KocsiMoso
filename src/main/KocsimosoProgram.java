@@ -1,6 +1,7 @@
 package main;
 
 import modell.Jarmu;
+import modell.Kamion;
 import modell.Kocsimoso;
 import modell.Motor;
 
@@ -15,17 +16,12 @@ public class KocsimosoProgram {
     public KocsimosoProgram() {
 
         kocsimosoda = new Kocsimoso(4);
+        System.out.println("-- bemegy:");
         kocsimosoda.bemegy(new Motor("342-WWW", "BMW"));
-        System.out.println(kocsimosoda.getJarmuvek());
-        System.out.println("-- mosas:");
-        kocsimosoda.normalMosas();
-        System.out.println(kocsimosoda.getJarmuvek());
-        System.out.println("-- kimegy:");
         kocsimosoda.kimegy();
-        System.out.println("-- tonkrement:");
+        kocsimosoda.bemegy(new Kamion("432-WFG", "Ford", 1.3, 1.3));
+        kocsimosoda.gyengebbMosas();
         kocsimosoda.tonkrement();
-        kocsimosoda.bemegy(new Motor("432-WFG", "Ford"));
-
         System.out.println(kocsimosoda.getJarmuvek());
 
     }

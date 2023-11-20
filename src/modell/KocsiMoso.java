@@ -14,6 +14,11 @@ public class Kocsimoso {
 
     public void tonkrement() {
         tonkrement = true;
+        kimegy();
+    }
+
+    public void megjavul() {
+        tonkrement = false;
     }
 
     public void bemegy(Jarmu kocsi) {
@@ -50,6 +55,7 @@ public class Kocsimoso {
 
     public void kimegy() {
         jarmu[0] = null;
+        szabad = true;
     }
 
     public String getJarmuvek() {
