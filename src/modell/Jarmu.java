@@ -31,8 +31,10 @@ public abstract class Jarmu {
         return "Ruha{" + "tulNeve=" + tulNeve + ", tiszta=" + tiszta + '}';
     }
 
-    public abstract void NagyMosas();
-    public abstract void KozepesMosas();
-    public abstract void KisMosas();
+    public abstract void nagyMosas();
+
+    public abstract void kozepesMosas();
+
+    public abstract void kisMosas();
 
 }
