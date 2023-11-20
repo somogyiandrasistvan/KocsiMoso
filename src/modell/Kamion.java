@@ -21,7 +21,7 @@ public class Kamion extends Jarmu {
     public String toString() {
         String os = super.toString();
         return os + System.lineSeparator() + "\t"
-                + "Ing{" + "szinIntenzitas=" + szinIntenzitas + '}';
+                + "Kamion{" + "szinIntenzitas=" + szinIntenzitas + '}';
     }
 
     @Override

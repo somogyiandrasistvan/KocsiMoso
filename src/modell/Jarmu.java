@@ -28,7 +28,7 @@ public abstract class Jarmu {
 
     @Override
     public String toString() {
-        return "Ruha{" + "tulNeve=" + tulNeve + ", tiszta=" + tiszta + '}';
+        return "Jarmu{" + "tulNeve=" + tulNeve + ", tiszta=" + tiszta + '}';
     }
 
     public abstract void nagyMosas();

@@ -3,7 +3,7 @@ package modell;
 public class NemLetezoJarmu extends Jarmu {
 
     public NemLetezoJarmu() {
-        super("Nemlétező ruha!");
+        super("Nemlétező jarmu!");
     }
 
     @Override

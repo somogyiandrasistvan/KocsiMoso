@@ -21,7 +21,7 @@ public class Motor extends Jarmu {
     public String toString() {
         String os = super.toString();
         return os + System.lineSeparator() + "\t"
-                + "Ing{" + "szinIntenzitas=" + szinIntenzitas + '}';
+                + "Motor{" + "szinIntenzitas=" + szinIntenzitas + '}';
     }
 
     @Override

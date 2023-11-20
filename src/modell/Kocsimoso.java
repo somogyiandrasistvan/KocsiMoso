@@ -6,7 +6,7 @@ import static modell.JarmuMeret.KICSI;
 
 public class Kocsimoso {
 
-    private Jarmu[] ruhak;
+    private Jarmu[] jarmuvek;
     private int ruhaDb;
 
     private enum UzemelesiAllapot {
@@ -20,7 +20,7 @@ public class Kocsimoso {
 
     public Kocsimoso(int db) {
         ruhaDb = 0;
-        ruhak = new Jarmu[db];
+        jarmuvek = new Jarmu[db];
         allapot = UzemelesiAllapot.UZEMEL;
     }
 
@@ -38,8 +38,8 @@ public class Kocsimoso {
 
     public void bevesz(Jarmu jarmu) {
         if (allapot == UzemelesiAllapot.UZEMEL) {
-            if (ruhaDb < ruhak.length) {
-                ruhak[ruhaDb++] = jarmu;
+            if (ruhaDb < jarmuvek.length) {
+                jarmuvek[ruhaDb++] = jarmu;
             } else {
                 System.out.println("A kocsimosó megtelt!");
             }
@@ -48,9 +48,22 @@ public class Kocsimoso {
         }
     }
 
-    public void altalanosMosas() {
+    public void nagyMosas() {
         if (allapot == UzemelesiAllapot.UZEMEL) {
-            for (Jarmu jarmu : ruhak) {
+            for (Jarmu jarmu : jarmuvek) {
+                if (jarmu != null) {
+                    jarmu.setTiszta(true);
+                    jarmu.nagyMosas();
+                }
+            }
+        } else {
+            nemUzemel();
+        }
+    }
+
+    public void kozepesMosas() {
+        if (allapot == UzemelesiAllapot.UZEMEL) {
+            for (Jarmu jarmu : jarmuvek) {
                 if (jarmu != null) {
                     jarmu.setTiszta(true);
                     jarmu.kozepesMosas();
@@ -63,7 +76,7 @@ public class Kocsimoso {
 
     public void kisMosas() {
         if (allapot == UzemelesiAllapot.UZEMEL) {
-            for (Jarmu jarmu : ruhak) {
+            for (Jarmu jarmu : jarmuvek) {
                 if (jarmu != null) {
                     jarmu.setTiszta(true);
                     jarmu.kisMosas();
@@ -78,16 +91,16 @@ public class Kocsimoso {
         Jarmu j = new NemLetezoJarmu();
         if (allapot == UzemelesiAllapot.UZEMEL) {
             int i = 0;
-            while (ruhak[i] == null || i < ruhaDb && !(ruhak[i].getTulNev().equals(tulNeve))) {
+            while (jarmuvek[i] == null || i < ruhaDb && !(jarmuvek[i].getTulNev().equals(tulNeve))) {
                 i++;
             }
             if (i < ruhaDb) {
-                String tipus = ruhak[i] instanceof Jarmu ? "ruhája" : "inge";
+                String tipus = jarmuvek[i] instanceof Jarmu ? "ruhája" : "inge";
                 System.out.println("Kiadva %s %s!".formatted(tulNeve, tipus));
-                j = ruhak[i];
-                ruhak[i] = null;
+                j = jarmuvek[i];
+                jarmuvek[i] = null;
             } else {
-                System.out.println("Nincs ilyen ruha a mosodában!");
+                System.out.println("Nincs ilyen jarmu a mosodában!");
             }
 
         } else {
@@ -99,9 +112,9 @@ public class Kocsimoso {
 
     public Jarmu[] getJarmuvek() {
         if (allapot == UzemelesiAllapot.UZEMEL) {
-            Jarmu[] kiadottRuhak = new Jarmu[this.ruhak.length];
+            Jarmu[] kiadottRuhak = new Jarmu[this.jarmuvek.length];
             for (int i = 0; i < ruhaDb; i++) {
-                Jarmu aktualisRuha = this.ruhak[i];
+                Jarmu aktualisRuha = this.jarmuvek[i];
                 if (aktualisRuha != null) {
                     kiadottRuhak[i] = aktualisRuha;
                 }
@@ -115,9 +128,9 @@ public class Kocsimoso {
 
     private void nemUzemel() {
         if (allapot == UzemelesiAllapot.NEM_UZEMEL) {
-            System.out.println("A mosoda nem üzemel!");
+            System.out.println("A kocsimosó nem üzemel!");
         } else if (allapot == UzemelesiAllapot.LEEGETT) {
-            System.out.println("A mosoda leégett!");
+            System.out.println("A kocsimosó leégett!");
         }
     }
 
