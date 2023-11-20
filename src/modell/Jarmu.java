@@ -1,15 +1,15 @@
 
 package modell;
 
-public class Auto {
+public abstract class Jarmu {
     private String rendszám;
     private String márka;
     private boolean tiszta;
 
-    public Auto(String rendszám, String márka) {
+    public Jarmu(String rendszám, String márka) {
         this.rendszám = rendszám;
         this.márka = márka;
-        tiszta = false;
+        this.tiszta = false;
     }
 
     public String getRendszám() {
@@ -38,8 +38,11 @@ public class Auto {
 
     @Override
     public String toString() {
-        return "Auto{" + "rendsz\u00e1m=" + rendszám + ", m\u00e1rka=" + márka + ", tiszta=" + tiszta + '}';
+        return "Jarmu{" + "rendsz\u00e1m=" + rendszám + ", m\u00e1rka=" + márka + ", tiszta=" + tiszta + '}';
     }
+    
+    public abstract void gyengebbMosas();
+    public abstract void normalMosas();
 
 
     

@@ -2,17 +2,17 @@ package modell;
 
 public class Kocsimoso {
 
-    private Auto[] auto;
+    private Jarmu[] jarmu;
     private boolean szabad;
 
     public Kocsimoso(int db) {
-        auto = new Auto[db];
+        jarmu = new Jarmu[db];
         szabad = true;
     }
 
-    public void bemegy(Auto kocsi) {
+    public void bemegy(Jarmu kocsi) {
         if (szabad == true) {
-            auto[0] = kocsi;
+            jarmu[0] = kocsi;
             szabad = false;
             System.out.println("Bekerült egy auto!");
         } else {
@@ -21,17 +21,23 @@ public class Kocsimoso {
     }
 
     public void normalMosas() {
-        auto[0].setTiszta(true);
+        jarmu[0].setTiszta(true);
+        jarmu[0].normalMosas();
+    }
+
+    public void gyengebbMosas() {
+        jarmu[0].setTiszta(true);
+        jarmu[0].gyengebbMosas();
     }
 
     public void kimegy() {
-        auto[0] = null;
+        jarmu[0] = null;
     }
 
-    public String getAutok() {
-        if (auto[0] != null) {
-            return auto[0].toString();
-        }else{
+    public String getJarmuvek() {
+        if (jarmu[0] != null) {
+            return jarmu[0].toString();
+        } else {
             return "üres a kocsimoso!";
         }
     }
